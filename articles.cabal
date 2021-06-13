@@ -38,9 +38,12 @@ library
       HUnit
     , Spock
     , Spock-core
+    , aeson
     , base >=4.7 && <5
     , bytestring
+    , containers
     , deepseq
+    , ede
     , feed
     , ghc
     , modern-uri
@@ -62,10 +65,13 @@ executable articles-exe
       HUnit
     , Spock
     , Spock-core
+    , aeson
     , articles
     , base >=4.7 && <5
     , bytestring
+    , containers
     , deepseq
+    , ede
     , feed
     , ghc
     , modern-uri
@@ -88,10 +94,13 @@ test-suite articles-test
       HUnit
     , Spock
     , Spock-core
+    , aeson
     , articles
     , base >=4.7 && <5
     , bytestring
+    , containers
     , deepseq
+    , ede
     , feed
     , ghc
     , modern-uri

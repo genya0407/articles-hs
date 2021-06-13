@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html lang='ja'>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>genya0407's articles</title>
+        <link rel="icon" href="/static/images/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:type"         content="website" />
+        <meta property="og:title"        content="genya0407's articles" />
+        <meta property="og:image"        content="https://articles.genya0407.net/static/images/array-san.jpg" />
+        <meta property="og:image:width"  content="256" />
+        <meta property="og:image:height" content="256" />
+        <meta property="og:description"  content="genya0407の書いた記事一覧" />
+        <meta property="og:url"          content="https://articles.genya0407.net/" />
+        <style type='text/css'>
+          @media (min-width: 600px) {
+            div.article {
+              display: flex;
+            }
+          }
+          
+          div.article {
+            border: solid 2px;
+            margin: 10px;
+            padding: 0px 20px;
+          }
+        </style>
+    </head>
+    <body>
+      <h2 style='text-align: center;'>genya0407's articles</h2>
+
+      <div style='text-align: center; max-width: 800px; margin: auto; font-size: small;'>
+          / {% for source in sources %}
+            <a href='{{ source.value.sourceUrl }}'>{{ source.value.sourceTitle }}</a> /
+          {% endfor %}
+      </div>
+
+      <div style='max-width: 800px; margin: auto;'>
+        {% for entry in entries %}
+          <div class='article'>
+            <div style='flex: 1; margin: 5px; display: flex; align-items: center;'>
+              <img style='max-width: 100%; max-height: 200px; margin: auto;' src='{{ entry.value.iconUrl }}'>
+            </div>
+            <div style='flex: 3; margin: 5px; margin-left: 20px;'>
+              <div>
+                <h3>
+                  <a style='text-decoration: none; color: black;' target='_blank' href='{{ entry.value.entryUrl }}'>{{ entry.value.title }}</a>
+                </h3>
+              </div>
+              <div style='text-indent: 1em; word-break: break-all;'>
+                {{ entry.value.abstract }} ...
+              </div>
+              <div style='text-align: right; margin-top: 10px; margin-bottom: 10px;'>
+                <a target='_blank' href='{{ entry.value.entryUrl }}' style='font-size: x-large; border: solid 2px; padding: 5px 20px; text-decoration: none; color: black;'>Detail</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </body>
+</html>

@@ -34,6 +34,9 @@ dependencies:
 - mtl
 - Spock
 - Spock-core
+- ede
+- aeson
+- containers
 
 library:
   source-dirs: src

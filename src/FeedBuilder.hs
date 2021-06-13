@@ -1,4 +1,4 @@
-module FeedBuilder (feedsIntoEntries, buildFeed) where
+module FeedBuilder (feedsIntoEntries, buildFeed, GenericEntry (..)) where
 
 import Control.DeepSeq
 import qualified Data.ByteString.Lazy as BL
@@ -33,7 +33,7 @@ buildFeed feedUrl feedTitleText entries =
                 (entryUrl entry)
                 (TextString . title $ entry)
                 (atomFormatTime . publishedAt $ entry)
-            atomIconUrl = (\url -> (nullLink url) {linkRel = Just (Left "enclosure")}) <$> iconUrl entry
+            atomIconUrl = (\url -> (nullLink url) {linkRel = Just (Right "enclosure")}) <$> iconUrl entry
          in atomEntry
               { entryContent = Just . TextContent . abstract $ entry,
                 entryLinks = entryLinks atomEntry ++ maybeToList atomIconUrl
@@ -65,8 +65,8 @@ extractEntriesAtom feed =
         GenericEntry
           { title = textContentToText $ Atom.entryTitle e,
             entryUrl = (Atom.linkHref . head . Atom.entryLinks) e,
-            abstract = fromMaybe ("" :: Text) $ (firstJusts [fmap textContentToText (Atom.entrySummary e), fmap entryContentToText (Atom.entryContent e)] :: Maybe Text),
-            iconUrl = Atom.linkHref <$> find (\l -> Atom.linkRel l == Just (Left "enclosure")) (Atom.entryLinks e),
+            abstract = fromMaybe ("" :: Text) (firstJusts [fmap textContentToText (Atom.entrySummary e), fmap entryContentToText (Atom.entryContent e)] :: Maybe Text),
+            iconUrl = Atom.linkHref <$> find (\l -> Atom.linkRel l == Just (Right "enclosure")) (Atom.entryLinks e),
             publishedAt = fromJust (parseTimeM True defaultTimeLocale (iso8601DateFormat (Just "%H:%M:%S%Ez")) (unpack $ Atom.entryUpdated e) :: Maybe UTCTime)
           }
       entryContentToText (Atom.TextContent t) = t
