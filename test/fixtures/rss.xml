@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>さんちゃのブログ 2nd</title>
+    <description></description>
+    <link>https://genya0407.github.io</link>
+    
+      
+      
+      <item>
+        <title>ISUCON10を振り返る</title>
+        
+          <description>ISUCON10を振り返ります</description>
+        
+        <pubDate>Sun, 20 Sep 2020 15:00:00 +0900</pubDate>
+        <link>
+        https://genya0407.github.io/post/isucon10</link>
+        <guid isPermaLink="true">https://genya0407.github.io/post/isucon10</guid>
+
+        
+        
+
+        
+            
+            <enclosure url="https://genya0407.github.io/assets/images/array-san.jpg" type="image/jpeg" length="0" />
+        
+
+      </item>
+      
+      
+    
+      
+      
+      <item>
+        <title>使い捨てMySQL環境の作り方</title>
+        
+          <description>Webアプリの開発時などに使える「使い捨てMySQL環境」の作り方を解説します。</description>
+        
+        <pubDate>Sat, 14 Sep 2019 18:00:00 +0900</pubDate>
+        <link>
+        https://genya0407.github.io/post/disposable-mysql</link>
+        <guid isPermaLink="true">https://genya0407.github.io/post/disposable-mysql</guid>
+
+        
+        
+
+        
+            
+            <enclosure url="https://genya0407.github.io/assets/images/dolphin.png" type="image/png" length="0" />
+        
+
+      </item>
+      
+      
+    
+      
+      
+      <item>
+        <title>ISUCON9に参加した</title>
+        
+          <description>ISUCON9に参加したログです</description>
+        
+        <pubDate>Mon, 09 Sep 2019 09:40:00 +0900</pubDate>
+        <link>
+        https://genya0407.github.io/post/isucon9</link>
+        <guid isPermaLink="true">https://genya0407.github.io/post/isucon9</guid>
+
+        
+        
+
+        
+            
+            <enclosure url="https://genya0407.github.io/assets/images/array-san.jpg" type="image/jpeg" length="0" />
+        
+
+      </item>
+      
+      
+    
+      
+      
+      <item>
+        <title>builderscon tokyo 2019の感想</title>
+        
+          <description>builderscon tokyo 2019の感想です</description>
+        
+        <pubDate>Sat, 31 Aug 2019 21:00:00 +0900</pubDate>
+        <link>
+        https://genya0407.github.io/post/builderscon</link>
+        <guid isPermaLink="true">https://genya0407.github.io/post/builderscon</guid>
+
+        
+        
+
+        
+            
+            <enclosure url="https://genya0407.github.io/assets/images/array-san.jpg" type="image/jpeg" length="0" />
+        
+
+      </item>
+      
+      
+    
+      
+      
+      <item>
+        <title>『Linux-DBシステム 構築/運用入門』 読了</title>
+        
+          <description>『Linux-DBシステム 構築/運用入門』を読了したので、その感想や関連した諸々について書きます。</description>
+        
+        <pubDate>Wed, 14 Aug 2019 12:00:00 +0900</pubDate>
+        <link>
+        https://genya0407.github.io/post/introduction-to-linux-db-building-and-operation</link>
+        <guid isPermaLink="true">https://genya0407.github.io/post/introduction-to-linux-db-building-and-operation</guid>
+
+        
+        
+
+        
+            
+            <enclosure url="https://genya0407.github.io/assets/images/dolphin.png" type="image/png" length="0" />
+        
+
+      </item>
+      
+      
+    
+      
+      
+      <item>
+        <title>使い捨てPostgreSQL環境の作り方</title>
+        
+          <description>Webアプリの開発時などに使える「使い捨てPostgreSQL環境」の作り方を解説します。</description>
+        
+        <pubDate>Sun, 19 May 2019 20:25:00 +0900</pubDate>
+        <link>
+        https://genya0407.github.io/post/disposable-postgres</link>
+        <guid isPermaLink="true">https://genya0407.github.io/post/disposable-postgres</guid>
+
+        
+        
+
+        
+            
+            <enclosure url="https://genya0407.github.io/assets/images/postgresql.png" type="image/png" length="0" />
+        
+
+      </item>
+      
+      
+    
+      
+      
+      <item>
+        <title>Rubyのしくみ 読了</title>
+        
+          <description>「Rubyのしくみ」を読みました。この記事では、「Rubyのしくみ」がどのような本なのかという紹介と、僕がこの本を読んで得た感想について書きます。</description>
+        
+        <pubDate>Mon, 06 May 2019 00:00:00 +0900</pubDate>
+        <link>
+        https://genya0407.github.io/post/ruby-under-a-microscope</link>
+        <guid isPermaLink="true">https://genya0407.github.io/post/ruby-under-a-microscope</guid>
+
+        
+        
+
+        
+            
+            <enclosure url="https://genya0407.github.io/assets/images/ruby-logo.png" type="image/png" length="0" />
+        
+
+      </item>
+      
+      
+    
+      
+      
+      <item>
+        <title>Effective Ruby 読了</title>
+        
+          <description>Effective Rubyを読みました。この記事では、Effective Rubyがどのような本なのかという紹介と、僕がこの本を読んで得た感想について書きます。</description>
+        
+        <pubDate>Thu, 02 May 2019 11:00:00 +0900</pubDate>
+        <link>
+        https://genya0407.github.io/post/effective-ruby</link>
+        <guid isPermaLink="true">https://genya0407.github.io/post/effective-ruby</guid>
+
+        
+        
+
+        
+            
+            <enclosure url="https://genya0407.github.io/assets/images/ruby-logo.png" type="image/png" length="0" />
+        
+
+      </item>
+      
+      
+    
+  </channel>
+</rss>

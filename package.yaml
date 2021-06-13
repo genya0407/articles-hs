@@ -21,9 +21,23 @@ description:         Please see the README on GitHub at <https://github.com/geny
 
 dependencies:
 - base >= 4.7 && < 5
+- feed
+- text
+- time
+- ghc
+- HUnit
+- deepseq
+- req
+- modern-uri
+- bytestring
+- sort
 
 library:
   source-dirs: src
+  default-extensions:
+    - OverloadedStrings
+    - DeriveGeneric
+    - DeriveAnyClass
 
 executables:
   articles-exe:
