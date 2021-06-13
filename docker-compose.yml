@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx:
+    image: docker.genya0407.net/articles-static:v0.1-rc1
+    ports:
+      - "127.0.0.1:${HOST_PORT:?err}:80"
+    links:
+      - web
+  web:
+    image: docker.genya0407.net/articles:v0.1-rc1
+    command: articles-exe
+    restart: always

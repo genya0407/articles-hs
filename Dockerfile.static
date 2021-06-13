@@ -1,0 +1,5 @@
+FROM nginx
+
+RUN mkdir -p /www/data/static
+COPY static /www/data/static
+COPY nginx.conf /etc/nginx/nginx.conf
