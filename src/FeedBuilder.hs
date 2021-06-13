@@ -1,20 +1,44 @@
-module FeedMerger
-  ( mergeFeedsIntoEntries,
-    GenericEntry (..),
-  )
-where
+module FeedBuilder (feedsIntoEntries, buildFeed) where
 
 import Control.DeepSeq
+import qualified Data.ByteString.Lazy as BL
 import Data.List (find)
-import Data.Maybe (fromJust, fromMaybe)
-import Data.Text (Text, strip, unpack)
+import Data.Maybe
+import Data.Ord
+import Data.Sort
+import Data.Text (Text, pack, strip, unpack)
+import Data.Text.IO as T (putStrLn)
+import Data.Text.Lazy (fromStrict)
+import Data.Text.Lazy.Encoding (decodeUtf8, encodeUtf8)
+import Data.Text.Lazy.IO as TL (putStrLn)
 import Data.Time.Clock (UTCTime (UTCTime))
-import Data.Time.Format (defaultTimeLocale, iso8601DateFormat, parseTimeM, rfc822DateFormat)
+import Data.Time.Format
 import GHC.Generics
 import Maybes (firstJusts)
+import Text.Atom.Feed
 import qualified Text.Atom.Feed as Atom
+import Text.Atom.Feed.Export
+import Text.Feed.Import (parseFeedSource)
 import qualified Text.Feed.Types as T
 import qualified Text.RSS.Syntax as RSS
+
+buildFeed :: Text -> Text -> [GenericEntry] -> Feed
+buildFeed feedUrl feedTitleText entries =
+  let feedTitle = TextString feedTitleText
+      atomFormatTime = pack . formatTime defaultTimeLocale (iso8601DateFormat (Just "%H:%M:%S%Ez"))
+      emptyFeed = nullFeed feedUrl feedTitle (atomFormatTime . maximum . map publishedAt $ entries)
+      atomEntries = flip map entries $ \entry ->
+        let atomEntry =
+              nullEntry
+                (entryUrl entry)
+                (TextString . title $ entry)
+                (atomFormatTime . publishedAt $ entry)
+            atomIconUrl = (\url -> (nullLink url) {linkRel = Just (Left "enclosure")}) <$> iconUrl entry
+         in atomEntry
+              { entryContent = Just . TextContent . abstract $ entry,
+                entryLinks = entryLinks atomEntry ++ maybeToList atomIconUrl
+              }
+   in emptyFeed {feedEntries = atomEntries}
 
 data GenericEntry = GenericEntry
   { title :: Text,
@@ -24,6 +48,9 @@ data GenericEntry = GenericEntry
     publishedAt :: UTCTime
   }
   deriving (Show, Generic, NFData)
+
+feedsIntoEntries :: [BL.ByteString] -> [GenericEntry]
+feedsIntoEntries = sortOn (Down . publishedAt) . mergeFeedsIntoEntries . mapMaybe parseFeedSource
 
 mergeFeedsIntoEntries :: [T.Feed] -> [GenericEntry]
 mergeFeedsIntoEntries [] = []

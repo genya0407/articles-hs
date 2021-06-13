@@ -25,7 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      FeedMerger
+      FeedBuilder
   other-modules:
       Paths_articles
   hs-source-dirs:
@@ -36,12 +36,15 @@ library
       DeriveAnyClass
   build-depends:
       HUnit
+    , Spock
+    , Spock-core
     , base >=4.7 && <5
     , bytestring
     , deepseq
     , feed
     , ghc
     , modern-uri
+    , mtl
     , req
     , sort
     , text
@@ -57,6 +60,8 @@ executable articles-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       HUnit
+    , Spock
+    , Spock-core
     , articles
     , base >=4.7 && <5
     , bytestring
@@ -64,6 +69,7 @@ executable articles-exe
     , feed
     , ghc
     , modern-uri
+    , mtl
     , req
     , sort
     , text
@@ -80,6 +86,8 @@ test-suite articles-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       HUnit
+    , Spock
+    , Spock-core
     , articles
     , base >=4.7 && <5
     , bytestring
@@ -87,6 +95,7 @@ test-suite articles-test
     , feed
     , ghc
     , modern-uri
+    , mtl
     , req
     , sort
     , text

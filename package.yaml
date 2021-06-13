@@ -31,6 +31,9 @@ dependencies:
 - modern-uri
 - bytestring
 - sort
+- mtl
+- Spock
+- Spock-core
 
 library:
   source-dirs: src
