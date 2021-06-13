@@ -97,7 +97,7 @@ main = do
   runSpock 3000 (spock spockCfg (app template))
 
 app template = do
-  get "index.html" $ do
+  get "/" $ do
     entries <- liftIO fetchEntries
     let env = fromPairs ["entries" .= toJSON (map fromGeneric entries), "sources" .= toJSON mySources, "default_icon_url" .= defaultIconURL]
         EDE.Success result = render template env
