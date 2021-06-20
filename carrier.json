@@ -1,0 +1,12 @@
+{
+    "images": {
+        "static": "Dockerfile.static",
+        "web": "Dockerfile"
+    },
+    "context": "genya0407.net",
+    "tag": "v0.2",
+    "projectName": "articles",
+    "registry": "docker.genya0407.net",
+    "environments": {},
+    "port": "3007"
+}
