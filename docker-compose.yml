@@ -2,6 +2,7 @@ version: '3'
 services:
   nginx:
     image: docker.genya0407.net/articles_static:${TAG}
+    restart: always
     ports:
       - "127.0.0.1:${PORT:?err}:80"
     links:
